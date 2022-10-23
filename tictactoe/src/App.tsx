@@ -142,6 +142,9 @@ function ConnectionStatus() {
   const selectRef = useRef<HTMLSelectElement>(null);
   const [accounts, setAccounts] = useState<string[]>([]);
   const { run, data, loading, error } = useAsync(async () => {
+    if ((window as any).ethereum && (window as any).ethereum.enable) {
+      await (window as any).ethereum.enable();
+    }
     const accounts = await state.web3.eth.getAccounts();
     // In development we can choose from several accounts
     // show a drop down to chose one.
