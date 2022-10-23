@@ -49,8 +49,12 @@ function Game() {
   const isPlayer2 = !!account && account === gameState.player2;
   const isPlayer = isPlayer1 || isPlayer2;
   const yourTurn =
-    (isPlayer1 && gameState.nextMove == Move.Player1) ||
-    (isPlayer2 && gameState.nextMove == Move.Player2);
+    (gameState.status == GameStatus.Playing &&
+      isPlayer1 &&
+      gameState.nextMove == Move.Player1) ||
+    (gameState.status == GameStatus.Playing &&
+      isPlayer2 &&
+      gameState.nextMove == Move.Player2);
   const youWin =
     (isPlayer1 && gameState.status === GameStatus.WinPlayer1) ||
     (isPlayer2 && gameState.status === GameStatus.WinPlayer2);
