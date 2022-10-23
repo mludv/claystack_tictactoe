@@ -1,0 +1,58 @@
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.status {
+    padding: 1rem;
+    border-bottom: 1px dashed slategray;
+    display: flex;
+    gap: 1rem;
+}
+
+.container {
+    position: relative;
+    min-height: 50vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.statusText {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cover {
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color:slategray;
+    position: absolute;
+    inset: 0;
+    background-color: #242424;
+    opacity: 0.8;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .cover {
+        background-color: rgb(255, 255, 255, 0.8);
+    }
+    .connection-status {
+        border-bottom: 1px dashed gainsboro;
+    }
+
+}
